@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-sm-auto">
                                 <input type="date" name="date" class="form-control form-control-sm"
-                                    value="{{old('date') ?? $schedule->date }} " required>
+                                    value="{{old('date') ?? $schedule->date}}" required>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu*
