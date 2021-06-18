@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\Route;
 
 
 // Homepage
-// Route::get('/', function () {
-//     return view('home.index');
-//     // return redirect()->route('dashboard');
-//     // Route::get('/home', \App\Http\Controllers\HomeController::class)->name('home');
-// });
+Route::get('/', function () {
+    return view('auth.login');
+    // return redirect()->route('dashboard');
+    // Route::get('/home', \App\Http\Controllers\HomeController::class)->name('home');
+});
 
-Route::get('/',[HomeController::class, 'index'])->name('home');
+// Route::get('/',[HomeController::class, 'index'])->name('home');
 
 //Dashboard
 Route::prefix('dashboard')

@@ -50,14 +50,14 @@
                         <th class="border px-6 py-4">Lampiran</th>
                         <th class="border px-6 py-4">Keterangan</th>
                         <th class="border px-6 py-4">Action</th>
-                    </tr>
+                    </tr> 
                     </thead>
                     <tbody>
                         @forelse($schedule as $data)
                             <tr>
                                 <td class="border px-6 py-4">{{ ($schedule->currentPage()-1) * $schedule->perPage()+$loop->index+1 }}</td>
-                                <td class="border px-6 py-4 ">{{ $data->date }}</td>
-                                <td class="border px-6 py-4">{{ $data->time }}</td>
+                                <td class="border px-6 py-4 ">{{ date('D, d F y', strtotime($data->date)) }}</td>
+                                <td class="border px-6 py-4 ">{{ date('H:i', strtotime($data->time)) }}</td>
                                 <td class="border px-6 py-4">{{ $data->agenda }}</td>
                                 <td class="border px-6 py-4">{{ $data->location }}</td>
                                 <td class="border px-6 py-4">{{ $data->organizer }}</td>

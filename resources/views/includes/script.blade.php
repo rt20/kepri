@@ -12,6 +12,10 @@
 <!-- select2 -->
 <script src="{{ asset('dist/plugins/select2/js/select2.min.js') }}"></script>
 
+
+
+
+
 <!-- select2 di create borrow -->
 <script>
     $(document).ready(function () {

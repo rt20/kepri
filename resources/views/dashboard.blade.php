@@ -28,23 +28,21 @@
         <div class="container-fluid">
             <!-- Info boxes -->
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Jumlah Kegiatan</span>
-                            <span class="info-box-number">
-                            {{ $schedule }}
-                               
-                            </span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
+                
                 <!-- /.col -->
-           
+                <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{ $schedule }}</h3>
+
+                <p>Jadwal Kegiatan</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="{{ asset("/dashboard/schedules") }}" class="small-box-footer">Detail info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->

@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        @include('includes.meta')
 
-        <title>@yield('title') | e-Office</title>
- 
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" href="">
-        <link rel="shortcut icon" type="image/x-icon" href="">
-       
-       @stack('before-style')
-       <!-- style -->
-       @include('includes.style')
-       @stack('after-style')
+<head>
+    @include('includes.meta')
 
-    </head>
-    <body>
-    <!-- Site wrapper -->
-<div class="wrapper">
+    <title>@yield('title') | Dinas Kesehatan Kabupaten Bantul</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+
+    @stack('before-style')
+    <!-- style -->
+    <!-- loginv8 -->
+<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('loginv8/css/main.css') }}">
+    @stack('after-style')
+
+</head>
+
+<body>
+ <!-- Site wrapper -->
+ <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <!-- <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a> -->
             </li>
            
         </ul>
@@ -42,65 +60,81 @@
     <!-- </div> -->
     <!-- ./wrapper -->
 
-    @include('home.sidebar')
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-        <!-- <a href="#"><img height="100px" width="100px"
-            src="{{ asset("/img/logo_big.png")}}"></a> -->
-           
-        </x-slot>
-       
-        <x-jet-validation-errors class="mb-4" />
+    <!-- Site wrapper -->
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form p-l-55 p-r-55 p-t-225" method="POST" action="{{ route('login') }}">
+                <!-- <form method="POST" action="{{ route('login') }}"> -->
+                        @csrf
+                    <span class="login100-form-title">
+                        Agenda Kegiatan<br>
+                        Dinas Kesehatan <br> Kabupaten Bantul
+                    </span>
+                   
+                        <div class="wrap-input100 validate-input m-b-16" data-validate="Silakan isi alamat email">
+                            <input class="input100" type="email" name="email" placeholder="Email">
+                            <span class="focus-input100"></span>
+                        </div>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+                        <div class="wrap-input100 validate-input" data-validate="Silakan isi password">
+                            <input class="input100" type="password" name="password" placeholder="Password">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="text-right p-t-13 p-b-23">
+                            <span class="txt1">
+                                Lupa
+                            </span>
+
+                            <a href="#" class="txt2" onclick="return confirm('Silakan hubungi Admin')">
+                                Email / Password?
+                            </a>
+                        </div>
+
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                Sign in
+                            </button>
+                        </div>
+                    <div class="flex-col-c p-t-90 p-b-20">
+                        <span class="txt1 p-b-9">
+                            Tidak punya akun?
+                        </span>
+
+                        <a href="/register" class="txt3">
+                            Daftar sekarang
+                        </a>
+                    </div>
+                </form>
             </div>
-        @endif
+        </div>
+    </div>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <div>
-           
-           
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+    
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+    @stack('before-script')
+    <!-- script -->
+     <!-- login -->
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="#">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>  
-    </x-jet-authentication-card>
-</x-guest-layout>
-
-@include('includes.footer')
-
-@stack('before-script')
-<!-- script -->
-@include('includes.script')
-@stack('after-script')
+<!--===============================================================================================-->
+<script src="{{ asset('loginv8/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('loginv8/vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('loginv8/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ asset('loginv8/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('loginv8/vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('loginv8/vendor/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ asset('loginv8/vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('loginv8/vendor/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('loginv8/js/main.js') }}"></script>
+    @stack('after-script')
 
 </body>
+
 </html>

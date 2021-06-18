@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-sm-5">
 
-                                <input type="text" name="attachment" class="form-control form-control-sm"
+                                <input type="file" name="attachment" class="form-control form-control-sm"
                                     placeholder="Lampiran" value="{{old('attachment') ?? $schedule->attachment }}">
                             </div>
                         </div>

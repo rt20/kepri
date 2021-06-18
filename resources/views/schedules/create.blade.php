@@ -30,7 +30,7 @@
         <div class="card">
             <div class="card-header">
                 <!-- <form action="{{ asset("/stugas") }}" method="POST"> -->
-                <form action="{{ route('schedules.store')}}" method="post">
+                <form action="{{ route('schedules.store')}}" method="post" >
                     @csrf
                     <div class="container">
                         <div class="row">
@@ -131,10 +131,10 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div id="googleMap" style="width:100%;height:380px;"></div>
                         </div>
-                        <br>
+                        <br> -->
 
 
                         <div class="row">
