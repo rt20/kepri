@@ -20,4 +20,5 @@
 <!-- select2 -->
 <link rel="stylesheet" href="{{ asset('dist/plugins/select2/css/select2.min.css') }}">
 
-
+<!-- mapbox -->
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />

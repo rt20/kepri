@@ -42,7 +42,8 @@
                 </div>
             </form>
             </div>
-            <div class="bg-white">
+            <!-- <div class="bg-white"> -->
+            <div class="card-body table-responsive p-0" style="overflow-x:auto;">
                 <table class="table-auto w-full">
                     <thead>
                     <tr>

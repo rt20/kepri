@@ -37,3 +37,51 @@
         return false;
     })
 </script>
+<!-- map api google  -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap" async
+    defer></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+    // variabel global marker
+    var marker;
+
+    function taruhMarker(peta, posisiTitik) {
+
+        if (marker) {
+            // pindahkan marker
+            marker.setPosition(posisiTitik);
+        } else {
+            // buat marker baru
+            marker = new google.maps.Marker({
+                position: posisiTitik,
+                map: peta
+            });
+        }
+
+        // isi nilai koordinat ke form
+        document.getElementById("lat").value = posisiTitik.lat();
+        document.getElementById("lng").value = posisiTitik.lng();
+
+    }
+
+    function initialize() {
+        var propertiPeta = {
+            center: new google.maps.LatLng(-6.2791059, 106.9236549, 19),
+            zoom: 9,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+
+        // even listner ketika peta diklik
+        google.maps.event.addListener(peta, 'click', function (event) {
+            taruhMarker(this, event.latLng);
+        });
+
+    }
+
+
+    // event jendela di-load  
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>

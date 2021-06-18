@@ -32,8 +32,8 @@
                     + Pinjam Barang
                 </a>
             </div>
-            <div class="bg-white">
-                <table class="table-auto w-full">
+            <div class="bg-white" style="overflow-x:auto;">
+                <table class="table-auto w-full" >
                     <thead>
                     <tr>
                         <th class="border px-6 py-4">No</th>

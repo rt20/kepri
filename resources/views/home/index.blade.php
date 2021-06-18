@@ -4,7 +4,7 @@
 <head>
     @include('includes.meta')
 
-    <title>Home | e-Office</title>
+    <title>Home | Jadwal Kegiatan</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" href="">
@@ -58,7 +58,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-10">
-                        <h1>Jadwal Pemakaian Ruang Rapat Luring / Daring</h1>
+                        <h1>Jadwal Kegiatan</h1>
                     </div>
                    
                 </div>
@@ -74,28 +74,30 @@
                 <table id="data_table" class="table">
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col">No</th>
-                        <th scope="col" class="nosort">Mulai</th>
-                        <th scope="col" class="nosort">Selesai</th>
-                        <th scope="col">Agenda</th>
-                        <th scope="col">Ruangan</th>
-                        <th scope="col">Waktu Mulai</th>
-                        <th scope="col">Waktu Selesai</th>
-                        <th scope="col">PIC</th>
+                        <th class="border px-6 py-4">No</th>
+                        <th class="border px-6 py-4">Hari, Tanggal</th>
+                        <th class="border px-6 py-4">Waktu</th>
+                        <th class="border px-6 py-4">Agenda</th>
+                        <th class="border px-6 py-4">Lokasi</th>
+                        <th class="border px-6 py-4">Penyelenggara</th>
+                        <th class="border px-6 py-4">Peserta</th>
+                        <th class="border px-6 py-4">No HP</th>
+                        <th class="border px-6 py-4">Keterangan</th>
                      
                     </tr>
                     </thead>
                     <tbody>
-                        @forelse($book as $item)
+                        @forelse($schedule as $data)
                             <tr>
-                                <td >{{ ($book->currentPage()-1) * $book->perPage()+$loop->index+1 }}</td>
-                                <td >{{ date('d F Y', $item->start)}}</td>
-                                <td >{{ date('d F Y', $item->end) }}</td>
-                                <td >{{ $item->agenda }}</td>
-                                <td >{{ $item->room }}</td>
-                                <td >{{ date('H:i', $item->start) }}</td>
-                                <td >{{ date('H:i', $item->end) }}</td>
-                                <td >{{ $item->pic }}</td>
+                                <td >{{ ($schedule->currentPage()-1) * $schedule->perPage()+$loop->index+1 }}</td>
+                                <td class="border px-6 py-4 ">{{ date('D, d F y', strtotime($data->date)) }}</td>
+                                <td class="border px-6 py-4 ">{{ date('H:i', strtotime($data->time)) }}</td>
+                                <td class="border px-6 py-4">{{ $data->agenda }}</td>
+                                <td class="border px-6 py-4">{{ $data->location }}</td>
+                                <td class="border px-6 py-4">{{ $data->organizer }}</td>
+                                <td class="border px-6 py-4">{{ $data->participant }}</td>
+                                <td class="border px-6 py-4">{{ $data->phone }}</td>
+                                <td class="border px-6 py-4">{{ $data->note }}</td>
                                
                             </tr>
                         @empty
@@ -110,7 +112,7 @@
                 </table>
             </div>
             <div class="text-center mt-5">
-                {{ $book->links() }}
+                {{ $schedule->links() }}
             </div>
         </div>
     

@@ -139,13 +139,13 @@
                             <div class="col-sm-2">
                             </div>
 
-                            <div class="col-sm-5">
+                            <div class="col-sm-9">
                                 <input type="checkbox" name="is_agree" value="1" required>
 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                     data-target="#exampleModalCenter">
-                                    Syarat dan Ketentuan
+                                    Saya setuju dengan syarat dan ketentuan yang berlaku
                                 </button>
 
                                 <!-- Modal -->
@@ -162,9 +162,9 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                Peminjam yang menerima Barang Milik Negara tersebut <b> bertanggungjawab
+                                                Peminjam yang menerima Barang Milik Negara tersebut setuju untuk<b> bertanggungjawab
                                                     atas kehilangan dan kerusakan </b> karena kelalaian pribadi Barang
-                                                Milik Negara
+                                                Milik Negara.
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
