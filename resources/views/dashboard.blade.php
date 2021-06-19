@@ -41,7 +41,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="{{ asset("/dashboard/schedules") }}" class="small-box-footer">Detail info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ asset("/schedules") }}" class="small-box-footer">Detail info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
                 <!-- /.col -->
             </div>

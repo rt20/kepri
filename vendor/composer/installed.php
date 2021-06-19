@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '179097b73b14423776ff86d2da60568cf0f736a0',
+    'reference' => 'd562bebd4c7276c1153eb176d2699d393059122c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -535,7 +535,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '179097b73b14423776ff86d2da60568cf0f736a0',
+      'reference' => 'd562bebd4c7276c1153eb176d2699d393059122c',
     ),
     'laravel/sail' => 
     array (
@@ -564,6 +564,15 @@
       ),
       'reference' => '04ad32c1a3328081097a181875733fa51f402083',
     ),
+    'laravelcollective/html' => 
+    array (
+      'pretty_version' => 'v6.2.1',
+      'version' => '6.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ae15b9c4bf918ec3a78f092b8555551dd693fde3',
+    ),
     'league/commonmark' => 
     array (
       'pretty_version' => '1.6.2',
@@ -581,6 +590,15 @@
       array (
       ),
       'reference' => '9be3b16c877d477357c015cec057548cf9b2a14a',
+    ),
+    'league/fractal' => 
+    array (
+      'pretty_version' => '0.19.2',
+      'version' => '0.19.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '06dc15f6ba38f2dde2f919d3095d13b571190a7c',
     ),
     'league/mime-type-detection' => 
     array (
@@ -1630,6 +1648,60 @@
       array (
       ),
       'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
+    ),
+    'yajra/laravel-datatables' => 
+    array (
+      'pretty_version' => 'v1.5.0',
+      'version' => '1.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '50de5e20ef01da1a353e0a81c0ad5f9da6a985ec',
+    ),
+    'yajra/laravel-datatables-buttons' => 
+    array (
+      'pretty_version' => 'v4.13.0',
+      'version' => '4.13.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3ac8d2bbfbb930852e75bdd3eb601ab629719247',
+    ),
+    'yajra/laravel-datatables-editor' => 
+    array (
+      'pretty_version' => 'v1.24.0',
+      'version' => '1.24.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3b959f928510f10364fa366a3bb792be96edefc9',
+    ),
+    'yajra/laravel-datatables-fractal' => 
+    array (
+      'pretty_version' => 'v1.6.0',
+      'version' => '1.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0aa387a9b3738248fa61110f0378904ef42b4a73',
+    ),
+    'yajra/laravel-datatables-html' => 
+    array (
+      'pretty_version' => 'v4.37.0',
+      'version' => '4.37.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4fe74af44ff9c2795714a2c0761bc4604328b072',
+    ),
+    'yajra/laravel-datatables-oracle' => 
+    array (
+      'pretty_version' => 'v9.18.0',
+      'version' => '9.18.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b00f25b1941879b34e05f270835235a32b46567c',
     ),
   ),
 );

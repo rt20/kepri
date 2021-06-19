@@ -20,15 +20,19 @@ Route::get('/', function () {
 // Route::get('/',[HomeController::class, 'index'])->name('home');
 
 //Dashboard
-Route::prefix('dashboard')
+Route::prefix('/')
     // ->middleware(['auth:sanctum','admin'])
+    ->middleware(['auth:sanctum'])
     ->group(function(){
         Route::get('/',[DashboardController::class,'index'])->name('dashboard');
         Route::resource('users', UserController::class);
         Route::resource('books', BookController::class);
         Route::resource('borrows', BorrowController::class);
         Route::resource('items', ItemController::class);
+
+        Route::get('schedules/ubah', 'App\Http\Controllers\ScheduleController@ubah')->name('schedules.ubah');
         Route::resource('schedules', ScheduleController::class);
+        
 
         // Route::post('item/import', 'ItemController@import')->name('item.import');  
         Route::post('item/import', [ItemController::class,'import'])->name('item.import');  

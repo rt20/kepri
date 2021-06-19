@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use App\Datatables\ScheduleDataTable;
 
 class ScheduleController extends Controller
 {
@@ -12,14 +13,63 @@ class ScheduleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $schedule = Schedule::orderBy('id', 'desc')->paginate(10);
+
+        if($request->ajax()){           
+            //Jika request from_date ada value(datanya) maka
+            if(!empty($request->from_date))
+            {
+                //Jika tanggal awal(from_date) hingga tanggal akhir(to_date) adalah sama maka
+                if($request->from_date === $request->to_date){
+                    //kita filter tanggalnya sesuai dengan request from_date
+                    $schedule = Schedule::whereDate('date','=', $request->from_date)->get();
+                }
+                else{
+                    //kita filter dari tanggal awal ke akhir
+                    $schedule = Schedule::whereBetween('date', array($request->from_date, $request->to_date))->get();
+                }                
+            }
+            //load data default
+            else
+            {
+                $schedule = Schedule::all();
+            }
+            return datatables()->of($schedule)
+                        ->addColumn('action', function($data){
+                            $button = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit-post"><i class="far fa-edit"></i> Edit</a>';
+                            $button .= '&nbsp;&nbsp;';
+                            $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Delete</button>';     
+                            return $button;
+                        })
+                        ->rawColumns(['action'])
+                        ->addIndexColumn()
+                        ->make(true);            
+        }
+        return view('schedules.index');
+        // return $dataTable->render('schedule');
+
+        // $schedule = Schedule::orderBy('date', 'desc')->get();
     
-        return view ('schedules.index',[
+        // return response()->json($schedule);
+    //     return view ('schedules.index',[
+    //         'schedule' => $schedule
+    // ]);
+    }
+
+    public function ubah()
+    {
+        $schedule = Schedule::orderBy('date', 'desc')->paginate(10);
+    
+        return view ('schedules.ubah',[
             'schedule' => $schedule
     ]);
     }
+
+    public function datajson()
+	{
+		return Datatables::of(Schedule::all())->make(true);
+	}
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +96,7 @@ class ScheduleController extends Controller
         # Tampilin flash message
         flash('Selamat data telah berhasil ditambahkan')->success();
         
-        return redirect()->route('schedules.index');
+        return redirect()->route('schedules.ubah');
     }
 
     /**
@@ -57,7 +107,7 @@ class ScheduleController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -87,7 +137,7 @@ class ScheduleController extends Controller
         $schedule->update($data);
         flash('Selamat data telah berhasil diupdate')->success();
 
-        return redirect()->route('schedules.index');
+        return redirect()->route('schedules.ubah');
     }
 
     /**

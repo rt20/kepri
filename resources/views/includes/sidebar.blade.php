@@ -19,7 +19,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="/dashboard" class="nav-link">
+            <a href="/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -61,20 +61,20 @@
               </p>
             </a>
            
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('books.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                Booking Ruangan
-              </p>
-            </a>
           </li> -->
           <li class="nav-item has-treeview">
             <a href="{{ route('schedules.index') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Jadwal Kegiatan
+                Agenda
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{ route('schedules.ubah') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Edit
               </p>
             </a>
           </li>

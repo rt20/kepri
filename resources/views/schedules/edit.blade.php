@@ -1,25 +1,25 @@
 @extends('layouts.app')
 
-@section('title','Jadwal Kegiatan')
+@section('title','Edit')
 
 @section('content')
 @include ('shared.errors')
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-@include ('flash::message')
+    @include ('flash::message')
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Jadwal Kegiatan</h1>
+                    <h1>Edit Agenda Kegiatan</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('schedules.index') }}">Jadwal</a></li>
-                        <li class="breadcrumb-item active">Tambah</li>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('schedules.index') }}">Agenda</a></li>
+                        <li class="breadcrumb-item active">Edit</li>
                     </ol>
                 </div>
             </div>
@@ -56,14 +56,34 @@
 
 
                         <br>
+                        <div class="row">
 
+                            <div class="col-sm-2">
+                                Tanggal Selesai*
+                            </div>
+                            <div class="col-sm-auto">
+                                <input type="date" name="date_end" class="form-control form-control-sm"
+                                value="{{old('date') ?? $schedule->date_end}}" required>
+                            </div>
+                            <div class="col-sm-auto">
+                                Waktu Selesai*
+                            </div>
+                            <div class="col-sm-auto">
+                                <input type="time" name="time_end" class="form-control form-control-sm"
+                                    value="{{old('time_end')?? $schedule->time_end}}" required>
+                            </div>
+                            WIB
+                        </div>
+
+                        <br>
                         <div class="row">
                             <div class="col-sm-2">
                                 Agenda*
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="agenda" placeholder="Nama Kegiatan/ Acara"
-                                    class="form-control form-control-sm" value="{{old('agenda') ?? $schedule->agenda }}">
+                                    class="form-control form-control-sm"
+                                    value="{{old('agenda') ?? $schedule->agenda }}">
                             </div>
                         </div>
                         </br>
@@ -73,7 +93,18 @@
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
-                                    class="form-control form-control-sm" value="{{old('location') ?? $schedule->location }}">
+                                    class="form-control form-control-sm"
+                                    value="{{old('location') ?? $schedule->location }}">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                Link Daring
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" name="link" placeholder="Link Meeting Online"
+                                    class="form-control form-control-sm" value="{{old('link')?? $schedule->link}}">
                             </div>
                         </div>
                         <br>
@@ -83,7 +114,8 @@
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="organizer" placeholder="Penyelenggara Kegiatan/ Acara"
-                                    class="form-control form-control-sm" value="{{old('organizer') ?? $schedule->organizer }}">
+                                    class="form-control form-control-sm"
+                                    value="{{old('organizer') ?? $schedule->organizer }}">
                             </div>
                         </div>
                         <br>
@@ -94,20 +126,12 @@
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="participant" placeholder="Peserta Kegiatan/ Acara"
-                                    class="form-control form-control-sm" value="{{old('participant') ?? $schedule->participant }}">
+                                    class="form-control form-control-sm"
+                                    value="{{old('participant') ?? $schedule->participant }}">
                             </div>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-sm-2">
-                                Nomor HP
-                            </div>
-                            <div class="col-sm-5">
-                                <input type="text" name="phone" placeholder="Nomor HP Whatsapp"
-                                    class="form-control form-control-sm" value="{{old('phone')?? $schedule->phone }}">
-                            </div>
-                        </div>
-                        <br>
+
                         <div class="row">
                             <div class="col-sm-2"> Keterangan
                             </div>

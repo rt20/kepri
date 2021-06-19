@@ -4,7 +4,7 @@
 <head>
     @include('includes.meta')
 
-    <title>@yield('title') | Jadwal</title>
+    <title>@yield('title') | Agenda</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" href="">

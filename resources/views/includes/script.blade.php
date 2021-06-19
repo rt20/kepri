@@ -9,13 +9,129 @@
 
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}" defer></script>
+
+
+<!-- datatables -->
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"> </script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"> </script>
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- datepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+<script>
+        //CSRF TOKEN PADA HEADER
+        //Script ini wajib krn kita butuh csrf token setiap kali mengirim request post, patch, put dan delete ke server
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            //jalankan function load_data diawal agar data ter-load
+            load_data();
+            //Iniliasi datepicker pada class input
+            $('.input-daterange').datepicker({
+                todayBtn: 'linked',
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+            $('#filter').click(function () {
+                var from_date = $('#from_date').val(); 
+                var to_date = $('#to_date').val(); 
+                if (from_date != '' && to_date != '') {
+                    $('#schedule').DataTable().destroy();
+                    load_data(from_date, to_date);
+                } else {
+                    alert('Both Date is required');
+                }
+            });
+            $('#refresh').click(function () {
+                $('#from_date').val('');
+                $('#to_date').val('');
+                $('#schedule').DataTable().destroy();
+                load_data();
+            });
+            //LOAD DATATABLE
+            //script untuk memanggil data json dari server dan menampilkannya berupa datatable
+            //load data menggunakan parameter tanggal dari dan tanggal hingga
+            function load_data(from_date = '', to_date = '') {
+                $('#schedule').DataTable({
+                    processing: true,
+                    serverSide: true, //aktifkan server-side 
+                    ajax: {
+                        url: "{{ route('schedules.index') }}",
+                        type: 'GET',
+                        data:{from_date:from_date, to_date:to_date} //jangan lupa kirim parameter tanggal 
+                    },
+                    columns: [{
+                            data: 'date',
+                            name: 'date'
+                        },
+                        {
+                            data: 'time',
+                            name: 'time'
+                        },
+                        {
+                            data: 'date_end',
+                            name: 'date_end'
+                        },
+                        {
+                            data: 'time_end',
+                            name: 'time_end'
+                        },
+                        {
+                            data: 'agenda',
+                            name: 'agenda'
+                        },
+                        {
+                            data: 'organizer',
+                            name: 'organizer'
+                        },
+                        {
+                            data: 'location',
+                            name: 'location'
+                        },
+                        {
+                            data: 'link',
+                            name: 'link'
+                        },
+                        {
+                            data: 'participant',
+                            name: 'participant'
+                        },
+                        {
+                            data: 'attachment',
+                            name: 'attachment'
+                        },
+                        {
+                            data: 'note',
+                            name: 'note'
+                        },
+                    ],
+                    order: [
+                        [0, 'desc']
+                    ]
+                });
+            }
+        });
+        </script>
 <!-- select2 -->
 <script src="{{ asset('dist/plugins/select2/js/select2.min.js') }}"></script>
-
-
-
-
-
 <!-- select2 di create borrow -->
 <script>
     $(document).ready(function () {
