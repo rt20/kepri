@@ -89,7 +89,7 @@
                     processing: true,
                     serverSide: true, //aktifkan server-side 
                     ajax: {
-                        url: "{{ route('schedules.index') }}",
+                        url: "https://jadwal.balok.id/schedules",
                         type: 'GET',
                         data:{from_date:from_date, to_date:to_date} //jangan lupa kirim parameter tanggal 
                     },
