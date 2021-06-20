@@ -39,14 +39,14 @@
                                 Tanggal Mulai*
                             </div>
                             <div class="col-sm-auto">
-                                <input type="date" name="date" class="form-control form-control-sm"
+                                <input id="date" type="date" name="date" class="form-control form-control-sm"
                                     value="{{old('date')}} " required>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu Mulai* 
                             </div>
                             <div class="col-sm-auto">
-                                <input type="time" name="time" class="form-control form-control-sm"
+                                <input id="time" type="time" name="time" class="form-control form-control-sm"
                                     value="{{old('time')}}" required>
                             </div>
                             WIB
@@ -58,14 +58,14 @@
                                 Tanggal Selesai*
                             </div>
                             <div class="col-sm-auto">
-                                <input type="date" name="date_end" class="form-control form-control-sm"
+                                <input id="date_end" type="date" name="date_end" class="form-control form-control-sm"
                                     value="{{old('date_end')}} " required>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu Selesai*
                             </div>
                             <div class="col-sm-auto">
-                                <input type="time" name="time_end" class="form-control form-control-sm"
+                                <input id="time_end" type="time" name="time_end" class="form-control form-control-sm"
                                     value="{{old('time_end')}}" required>
                             </div>
                             WIB
@@ -78,7 +78,7 @@
                                 Agenda*
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="agenda" placeholder="Nama Kegiatan/ Acara"
+                                <input id="agenda" type="text" name="agenda" placeholder="Nama Kegiatan/ Acara"
                                     class="form-control form-control-sm" value="{{old('agenda')}}">
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                 Penyelenggara*
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="organizer" placeholder="Penyelenggara Kegiatan/ Acara"
+                                <input id="organizer" type="text" name="organizer" placeholder="Penyelenggara Kegiatan/ Acara"
                                     class="form-control form-control-sm" value="{{old('organizer')}}">
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                 Lokasi
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
+                                <input id="location" type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
                                     class="form-control form-control-sm" value="{{old('location')}}">
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                                 Link Daring
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="link" placeholder="Link Meeting Online"
+                                <input id="link" type="text" name="link" placeholder="Link Meeting Online"
                                     class="form-control form-control-sm" value="{{old('link')}}">
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 Peserta
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="participant" placeholder="Peserta Kegiatan/ Acara"
+                                <input id="participant" type="text" name="participant" placeholder="Peserta Kegiatan/ Acara"
                                     class="form-control form-control-sm" value="{{old('participant')}}">
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                             </div>
                             <div class="col-sm-5">
 
-                                <input type="text" name="note" class="form-control form-control-sm"
+                                <input id="note" type="text" name="note" class="form-control form-control-sm"
                                     placeholder="Keterangan" value="{{old('note')}}">
                             </div>
                         </div>
@@ -146,7 +146,7 @@
                     <button type="button" class="btn btn-info btn-flat">Go!</button>
                   </span>
                 </div> -->
-                                <input type="file" name="attachment" class="form-control form-control-sm"
+                                <input id="attachment" type="file" name="attachment" class="form-control form-control-sm"
                                     placeholder="Lampiran" value="{{old('attachment')}}">
                             </div>
                         </div>
@@ -166,6 +166,7 @@
                             <div class="col-sm-4">
 
                                 <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="button" name="refresh" id="bersih" class="btn btn-info">Refresh</button>
                             </div>
                         </div>
                 </form>

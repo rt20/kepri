@@ -18,12 +18,12 @@
 <script src="{{ asset('js/jszip.min.js')}}"> </script>
 <script src="{{ asset('js/pdfmake.min.js')}}"> </script>
 <script src="{{ asset('js/vfs_fonts.js')}}"> </script>
-
-<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+ 
+<script type="text/javascript" language="javascript" src="{{ asset('js/jquery/jquery-3.5.1.js')}}"></script>
 <script type="text/javascript" language="javascript"
     src="{{ asset('dist/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script type="text/javascript" language="javascript"
-    src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    src="{{ asset('dist/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 
 <!-- datepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -66,6 +66,20 @@
                 $('#to_date').val('');
                 $('#schedule').DataTable().destroy();
                 load_data();
+            });
+            $('#bersih').click(function () {
+                $('#date').val('');
+                $('#time').val('');
+                $('#date_end').val('');
+                $('#time_end').val('');
+                $('#agenda').val('');
+                $('#organizer').val('');
+                $('#location').val('');
+                $('#link').val('');
+                $('#note').val('');
+                $('#attachment').val('');
+                $('#participant').val('');
+                $('#participant').val('');
             });
             //LOAD DATATABLE
             //script untuk memanggil data json dari server dan menampilkannya berupa datatable

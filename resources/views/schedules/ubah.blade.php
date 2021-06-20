@@ -40,30 +40,26 @@
                 <!-- <table id="schedule" class="table table-striped table-bordered table-sm" style="width:100%"> -->
                     <thead>
                     <tr>
-                       
-                        <th class="border px-6 py-4">Hari, Tanggal</th>
-                        <th class="border px-6 py-4">Waktu</th>
-                        <th class="border px-6 py-4">Agenda</th>
-                        <th class="border px-6 py-4">Lokasi</th>
-                        <th class="border px-6 py-4">Penyelenggara</th>
-                        <th class="border px-6 py-4">Peserta</th>
-                       
-                        
-                        <th class="border px-6 py-4">Action</th>
+                        <th>Hari, Tanggal</th>
+                        <th>Waktu</th>
+                        <th>Agenda</th>
+                        <th>Lokasi</th>
+                        <th>Penyelenggara</th>
+                        <th>Peserta</th>
+                        <th>Action</th>
                     </tr> 
                     </thead>
                     <tbody>
                         @forelse($schedule as $data)
                             <tr>
-                                <td class="border px-6 py-4 ">{{ date('D, d F y', strtotime($data->date)) }}</td>
-                                <td class="border px-6 py-4 ">{{ date('H:i', strtotime($data->time)) }}</td>
-                                <td class="border px-6 py-4">{{ $data->agenda }}</td>
-                                <td class="border px-6 py-4">{{ $data->location }}</td>
-                                <td class="border px-6 py-4">{{ $data->organizer }}</td>
-                                <td class="border px-6 py-4">{{ $data->participant }}</td>
+                                <td>{{ date('D, d F y', strtotime($data->date)) }}</td>
+                                <td>{{ date('H:i', strtotime($data->time)) }}</td>
+                                <td>{{ $data->agenda }}</td>
+                                <td>{{ $data->location }}</td>
+                                <td>{{ $data->organizer }}</td>
+                                <td>{{ $data->participant }}</td>
+                                <td>
                                
-                                
-                                <td class="border px-6 py- text-center">
                                     <a href="{{ route('schedules.edit', $data->id) }}" class="btn btn-success btn-sm" title="Ubah">
                                     <i class="fa fa-edit"></i>
                                     </a>
@@ -72,6 +68,7 @@
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ?')">
                                         <i class="fa fa-trash"></i>
                                         </button>
+                                        
                                     </form>
                                 </td>
                             </tr>

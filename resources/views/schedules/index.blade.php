@@ -58,18 +58,18 @@
                     <thead>
                         <tr>
 
-                            <th class="border px-6 py-4">Hari, Tanggal Mulai</th>
-                            <th class="border px-6 py-4">Waktu Mulai</th>
-                            <th class="border px-6 py-4">Hari, Tanggal Selesai</th>
-                            <th class="border px-6 py-4">Waktu Selesai</th>
-                            <th class="border px-6 py-4">Agenda</th>
-                            <th class="border px-6 py-4">Penyelenggara</th>
-                            <th class="border px-6 py-4">Lokasi</th>
-                            <th class="border px-6 py-4">Link</th>
-                            <th class="border px-6 py-4">Peserta</th>
+                            <th>Hari, Tanggal Mulai</th>
+                            <th>Waktu Mulai</th>
+                            <th>Hari, Tanggal Selesai</th>
+                            <th>Waktu Selesai</th>
+                            <th>Agenda</th>
+                            <th>Penyelenggara</th>
+                            <th>Lokasi</th>
+                            <th>Link</th>
+                            <th>Peserta</th>
 
-                            <th class="border px-6 py-4">Lampiran</th>
-                            <th class="border px-6 py-4">Keterangan</th>
+                            <th>Lampiran</th>
+                            <th>Keterangan</th>
 
                         </tr>
                     </thead>
