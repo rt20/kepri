@@ -59,7 +59,7 @@ class ScheduleController extends Controller
 
     public function ubah()
     {
-        $schedule = Schedule::orderBy('date', 'desc')->paginate(10);
+        $schedule = Schedule::orderBy('date', 'desc')->get();
     
         return view ('schedules.ubah',[
             'schedule' => $schedule
@@ -151,6 +151,6 @@ class ScheduleController extends Controller
         $schedule->delete();
         flash('Data telah berhasil dihapus')->error();
 
-        return redirect()->route('schedules.index');
+        return redirect()->route('schedules.ubah');
     }
 }

@@ -12,15 +12,16 @@
 
 
 <!-- datatables -->
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"> </script>
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"> </script>
+
+<script src="{{ asset('dist/plugins/datatables-buttons/js/buttons.html5.min.js') }}"> </script>
+<script src="{{ asset('dist/plugins/datatables-buttons/js/buttons.print.min.js') }}"> </script>
+<script src="{{ asset('js/jszip.min.js')}}"> </script>
+<script src="{{ asset('js/pdfmake.min.js')}}"> </script>
+<script src="{{ asset('js/vfs_fonts.js')}}"> </script>
 
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" language="javascript"
-    src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    src="{{ asset('dist/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script type="text/javascript" language="javascript"
     src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
 
@@ -159,9 +160,9 @@
 </script>
 <!-- map api google  -->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap" async
-    defer></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap" async
+    defer></script> -->
+<!-- <script src="http://maps.googleapis.com/maps/api/js"></script> -->
 <script>
     // variabel global marker
     var marker;
