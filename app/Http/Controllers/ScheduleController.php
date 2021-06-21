@@ -47,14 +47,7 @@ class ScheduleController extends Controller
                         ->make(true);            
         }
         return view('schedules.index');
-        // return $dataTable->render('schedule');
-
-        // $schedule = Schedule::orderBy('date', 'desc')->get();
-    
-        // return response()->json($schedule);
-    //     return view ('schedules.index',[
-    //         'schedule' => $schedule
-    // ]);
+       
     }
 
     public function ubah()
@@ -107,7 +100,11 @@ class ScheduleController extends Controller
      */
     public function show($id)
     {
-        
+        $schedule = Schedule::findOrFail($id);
+
+        return view ('schedules.show',[
+            'schedule' => $schedule
+    ]);
     }
 
     /**

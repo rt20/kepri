@@ -43,7 +43,7 @@
                                     value="{{old('date')}} " required>
                             </div>
                             <div class="col-sm-auto">
-                                Waktu Mulai* 
+                                Waktu Mulai*
                             </div>
                             <div class="col-sm-auto">
                                 <input id="time" type="time" name="time" class="form-control form-control-sm"
@@ -73,6 +73,7 @@
 
                         <br>
 
+
                         <div class="row">
                             <div class="col-sm-2">
                                 Agenda*
@@ -88,21 +89,13 @@
                                 Penyelenggara*
                             </div>
                             <div class="col-sm-5">
-                                <input id="organizer" type="text" name="organizer" placeholder="Penyelenggara Kegiatan/ Acara"
-                                    class="form-control form-control-sm" value="{{old('organizer')}}">
+                                <input id="organizer" type="text" name="organizer"
+                                    placeholder="Penyelenggara Kegiatan/ Acara" class="form-control form-control-sm"
+                                    value="{{old('organizer')}}">
                             </div>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-sm-2">
-                                Lokasi
-                            </div>
-                            <div class="col-sm-5">
-                                <input id="location" type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
-                                    class="form-control form-control-sm" value="{{old('location')}}">
-                            </div>
-                        </div>
-                        <br>
+
                         <div class="row">
                             <div class="col-sm-2">
                                 Link Daring
@@ -113,15 +106,16 @@
                             </div>
                         </div>
                         <br>
-                      
+
 
                         <div class="row">
                             <div class="col-sm-2">
                                 Peserta
                             </div>
                             <div class="col-sm-5">
-                                <input id="participant" type="text" name="participant" placeholder="Peserta Kegiatan/ Acara"
-                                    class="form-control form-control-sm" value="{{old('participant')}}">
+                                <input id="participant" type="text" name="participant"
+                                    placeholder="Peserta Kegiatan/ Acara" class="form-control form-control-sm"
+                                    value="{{old('participant')}}">
                             </div>
                         </div>
                         <br>
@@ -140,23 +134,30 @@
                             <div class="col-sm-2"> Lampiran
                             </div>
                             <div class="col-sm-5">
-                                <!-- <div class="input-group input-group-sm">
-                  <input type="file" class="form-control" name="attachment" placeholder="Lampiran" value="{{old('attachment')}}">
-                  <span class="input-group-append">
-                    <button type="button" class="btn btn-info btn-flat">Go!</button>
-                  </span>
-                </div> -->
-                                <input id="attachment" type="file" name="attachment" class="form-control form-control-sm"
-                                    placeholder="Lampiran" value="{{old('attachment')}}">
+                                <input id="attachment" type="file" name="attachment"
+                                    class="form-control form-control-sm" placeholder="Lampiran"
+                                    value="{{old('attachment')}}">
                             </div>
                         </div>
                         <br>
-                        <!-- <div class="row">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                Lokasi
+                            </div>
+                            <div class="col-sm-5">
+                                <input id="location" type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
+                                    class="form-control form-control-sm" value="{{old('location')}}">
+                                <input type="hidden" id="lat" name="lat" value="">
+                                <input type="hidden" id="lng" name="lng" value="">
+                                <br>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
                             <div id="googleMap" style="width:100%;height:380px;"></div>
                         </div>
-                        <br> -->
-
-
+                        <br>
                         <div class="row">
                             <div class="col-sm-2">
                             </div>

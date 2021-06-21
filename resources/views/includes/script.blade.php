@@ -89,7 +89,8 @@
                     processing: true,
                     serverSide: true, //aktifkan server-side 
                     ajax: {
-                        url: "https://jadwal.balok.id/schedules",
+                        // url: "{{ route('schedules.index') }}",
+                        url: "https://jadwal.balok.id/schedules", 
                         type: 'GET',
                         data:{from_date:from_date, to_date:to_date} //jangan lupa kirim parameter tanggal 
                     },
@@ -122,20 +123,11 @@
                             name: 'location'
                         },
                         {
-                            data: 'link',
-                            name: 'link'
-                        },
-                        {
-                            data: 'participant',
-                            name: 'participant'
-                        },
-                        {
-                            data: 'attachment',
-                            name: 'attachment'
-                        },
-                        {
-                            data: 'note',
-                            name: 'note'
+                            data: 'id',
+                            name: 'id',
+                            render: function ( data, type, row, meta ) {
+                                return '<a href="/schedules/'+data+'">Detail</a>';
+                            }
                         },
                     ],
                     order: [
@@ -145,6 +137,7 @@
             }
         });
         </script>
+        
 <!-- select2 -->
 <script src="{{ asset('dist/plugins/select2/js/select2.min.js') }}"></script>
 <!-- select2 di create borrow -->
@@ -173,10 +166,9 @@
     })
 </script>
 <!-- map api google  -->
-
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap" async
+<!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap" async
     defer></script> -->
-<!-- <script src="http://maps.googleapis.com/maps/api/js"></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap"></script>
 <script>
     // variabel global marker
     var marker;
@@ -193,7 +185,7 @@
                 map: peta
             });
         }
-
+        console.log("Posisi marker: " + posisiTitik);
         // isi nilai koordinat ke form
         document.getElementById("lat").value = posisiTitik.lat();
         document.getElementById("lng").value = posisiTitik.lng();
@@ -202,8 +194,8 @@
 
     function initialize() {
         var propertiPeta = {
-            center: new google.maps.LatLng(-6.2791059, 106.9236549, 19),
-            zoom: 9,
+            center: new google.maps.LatLng(-7.9023286,110.2925648,13),
+            zoom: 10,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 

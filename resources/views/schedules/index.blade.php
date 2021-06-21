@@ -63,13 +63,10 @@
                             <th>Hari, Tanggal Selesai</th>
                             <th>Waktu Selesai</th>
                             <th>Agenda</th>
+                           
                             <th>Penyelenggara</th>
                             <th>Lokasi</th>
-                            <th>Link</th>
-                            <th>Peserta</th>
-
-                            <th>Lampiran</th>
-                            <th>Keterangan</th>
+                            <th>Aksi</th>
 
                         </tr>
                     </thead>

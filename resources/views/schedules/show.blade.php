@@ -13,13 +13,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Edit Agenda Kegiatan</h1>
+                    <h1>Detail Agenda Kegiatan</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('schedules.ubah') }}">Ubah</a></li>
-                        <li class="breadcrumb-item active">Edit</li>
+                        <li class="breadcrumb-item"><a href="{{ route('schedules.index') }}">Agenda</a></li>
+                        <li class="breadcrumb-item active">Detail</li>
                     </ol>
                 </div>
             </div>
@@ -31,9 +31,8 @@
         <div class="card">
             <div class="card-header">
                 <!-- <form action="{{ asset("/stugas") }}" method="POST"> -->
-                <form action="{{ route('schedules.update',$schedule->id) }}" method="post">
-                    @csrf
-                    @method('PUT')
+                <!-- <form action="{{ route('schedules.update',$schedule->id) }}" method="post"> -->
+                  
                     <div class="container">
                         <div class="row">
 
@@ -42,14 +41,14 @@
                             </div>
                             <div class="col-sm-auto">
                                 <input type="date" name="date" class="form-control form-control-sm"
-                                    value="{{old('date') ?? $schedule->date}}" required>
+                                    value="{{old('date') ?? $schedule->date}}" disabled>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu*
                             </div>
                             <div class="col-sm-auto">
                                 <input type="time" name="time" class="form-control form-control-sm"
-                                    value="{{old('time') ?? $schedule->time}}" required>
+                                    value="{{old('time') ?? $schedule->time}}" disabled required>
                             </div>
                             WIB
                         </div>
@@ -63,14 +62,14 @@
                             </div>
                             <div class="col-sm-auto">
                                 <input type="date" name="date_end" class="form-control form-control-sm"
-                                    value="{{old('date') ?? $schedule->date_end}}" required>
+                                    value="{{old('date') ?? $schedule->date_end}}" disabled required>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu Selesai*
                             </div>
                             <div class="col-sm-auto">
                                 <input type="time" name="time_end" class="form-control form-control-sm"
-                                    value="{{old('time_end')?? $schedule->time_end}}" required>
+                                    value="{{old('time_end')?? $schedule->time_end}}" disabled required>
                             </div>
                             WIB
                         </div>
@@ -83,7 +82,7 @@
                             <div class="col-sm-5">
                                 <input type="text" name="agenda" placeholder="Nama Kegiatan/ Acara"
                                     class="form-control form-control-sm"
-                                    value="{{old('agenda') ?? $schedule->agenda }}">
+                                    value="{{old('agenda') ?? $schedule->agenda }}" disabled>
                             </div>
                         </div>
                         </br>
@@ -92,7 +91,7 @@
                                 Link Daring
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="link" placeholder="Link Meeting Online"
+                                <input type="text" name="link" placeholder="Link Meeting Online" disabled
                                     class="form-control form-control-sm" value="{{old('link')?? $schedule->link}}">
                             </div>
                         </div>
@@ -103,7 +102,7 @@
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="organizer" placeholder="Penyelenggara Kegiatan/ Acara"
-                                    class="form-control form-control-sm"
+                                    class="form-control form-control-sm" disabled
                                     value="{{old('organizer') ?? $schedule->organizer }}">
                             </div>
                         </div>
@@ -115,7 +114,7 @@
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="participant" placeholder="Peserta Kegiatan/ Acara"
-                                    class="form-control form-control-sm"
+                                    class="form-control form-control-sm" disabled
                                     value="{{old('participant') ?? $schedule->participant }}">
                             </div>
                         </div>
@@ -126,7 +125,7 @@
                             </div>
                             <div class="col-sm-5">
 
-                                <input type="text" name="note" class="form-control form-control-sm"
+                                <input type="text" name="note" class="form-control form-control-sm" disabled
                                     placeholder="Keterangan" value="{{old('note') ?? $schedule->note }}">
                             </div>
                         </div>
@@ -135,9 +134,7 @@
                             <div class="col-sm-2"> Lampiran
                             </div>
                             <div class="col-sm-5">
-
-                                <input type="file" name="attachment" class="form-control form-control-sm"
-                                    placeholder="Lampiran" value="{{old('attachment') ?? $schedule->attachment }}">
+                            {{old('attachment') }}
                             </div>
                         </div>
                         <br>
@@ -147,7 +144,7 @@
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
-                                    class="form-control form-control-sm"
+                                    class="form-control form-control-sm" disabled
                                     value="{{old('location') ?? $schedule->location }}">
                                 <input type="hidden" id="lat" name="lat" value="{{old('lat') ?? $schedule->lat }}">
                                 <input type="hidden" id="lng" name="lng" value="{{old('lng') ?? $schedule->lng }}">
@@ -157,16 +154,7 @@
                         <div class="row">
                             <div id="googleMap" style="width:100%;height:380px;"></div>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm-2">
-                            </div>
-                            <div class="col-sm-4">
-
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </div>
-                        </div>
-                </form>
+                <!-- </form> -->
             </div>
         </div>
         <!--/. container-fluid -->
