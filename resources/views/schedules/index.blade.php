@@ -32,7 +32,7 @@
                 <div class="col-sm-2">
                     <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date"
                         readonly />
-                </div>
+                </div> -
                 <div class="col-sm-2">
                     <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date"
                         readonly />
@@ -63,10 +63,12 @@
                             <th>Hari, Tanggal Selesai</th>
                             <th>Waktu Selesai</th>
                             <th>Agenda</th>
-                           
                             <th>Penyelenggara</th>
                             <th>Lokasi</th>
-                            <th>Aksi</th>
+                            <th>Link</th>
+                            <th>Peserta</th>
+                            <th>Lampiran</th>
+                            <th>Catatan</th>
 
                         </tr>
                     </thead>

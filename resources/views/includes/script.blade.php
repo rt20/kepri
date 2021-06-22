@@ -123,12 +123,25 @@
                             name: 'location'
                         },
                         {
-                            data: 'id',
-                            name: 'id',
+                            data: 'link',
+                            name: 'link',
                             render: function ( data, type, row, meta ) {
-                                return '<a href="/schedules/'+data+'">Detail</a>';
+                                return '<a href="'+data+'" target="_blank">'+data+'</a>';
                             }
                         },
+                        {
+                            data: 'participant',
+                            name: 'participant'
+                        },
+                        {
+                            data: 'attachment',
+                            name: 'attachment'
+                        },
+                        {
+                            data: 'note',
+                            name: 'note'
+                        },
+                       
                     ],
                     order: [
                         [0, 'desc']
@@ -166,9 +179,8 @@
     })
 </script>
 <!-- map api google  -->
-<!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap" async
-    defer></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap"></script>
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCWd7tSEONvnnq9uzd9etwxkpy7-tgn6jI&callback=initMap"></script>
 <script>
     // variabel global marker
     var marker;
@@ -194,7 +206,7 @@
 
     function initialize() {
         var propertiPeta = {
-            center: new google.maps.LatLng(-7.9023286,110.2925648,13),
+            center: new google.maps.LatLng(-7.9023286,110.2925648),
             zoom: 10,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -212,3 +224,5 @@
     // event jendela di-load  
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+
+

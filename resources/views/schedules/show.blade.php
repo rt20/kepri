@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Edit')
+@section('title','Detail')
 
 @section('content')
 @include ('shared.errors')
@@ -134,7 +134,7 @@
                             <div class="col-sm-2"> Lampiran
                             </div>
                             <div class="col-sm-5">
-                            {{old('attachment') }}
+                            {{old('attachment')?? $schedule->attachment }}
                             </div>
                         </div>
                         <br>
@@ -146,13 +146,14 @@
                                 <input type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
                                     class="form-control form-control-sm" disabled
                                     value="{{old('location') ?? $schedule->location }}">
-                                <input type="hidden" id="lat" name="lat" value="{{old('lat') ?? $schedule->lat }}">
-                                <input type="hidden" id="lng" name="lng" value="{{old('lng') ?? $schedule->lng }}">
+                                <input type="text" id="lat" name="lat" value="{{old('lat') ?? $schedule->lat }}">
+                                <input type="text" id="lng" name="lng" value="{{old('lng') ?? $schedule->lng }}">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div id="googleMap" style="width:100%;height:380px;"></div>
+
                         </div>
                 <!-- </form> -->
             </div>
@@ -164,3 +165,4 @@
 <!-- /.content-wrapper -->
 
 @endsection
+

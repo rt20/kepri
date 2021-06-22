@@ -98,10 +98,10 @@
 
                         <div class="row">
                             <div class="col-sm-2">
-                                Link Daring
+                                Link Daring*
                             </div>
                             <div class="col-sm-5">
-                                <input id="link" type="text" name="link" placeholder="Link Meeting Online"
+                                <input id="link" type="text" name="link" placeholder="Link Meeting Online" required
                                     class="form-control form-control-sm" value="{{old('link')}}">
                             </div>
                         </div>
@@ -155,7 +155,7 @@
 
 
                         <div class="row">
-                            <div id="googleMap" style="width:100%;height:380px;"></div>
+                            <!-- <div id="googleMap" style="width:100%;height:380px;"></div> -->
                         </div>
                         <br>
                         <div class="row">
