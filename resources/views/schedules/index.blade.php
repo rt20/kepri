@@ -32,7 +32,7 @@
                 <div class="col-sm-2">
                     <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date"
                         readonly />
-                </div> -
+                </div> 
                 <div class="col-sm-2">
                     <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date"
                         readonly />
