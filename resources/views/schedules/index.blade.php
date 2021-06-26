@@ -68,7 +68,7 @@
                             <th>Link</th>
                             <th>Peserta</th>
                             <th>Lampiran</th>
-                            <th>Catatan</th>
+                            <th>Keterangan</th>
 
                         </tr>
                     </thead>
