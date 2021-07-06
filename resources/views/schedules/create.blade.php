@@ -30,7 +30,7 @@
         <div class="card">
             <div class="card-header">
                 <!-- <form action="{{ asset("/stugas") }}" method="POST"> -->
-                <form action="{{ route('schedules.store')}}" method="post">
+                <form action="{{ route('schedules.store')}}" method="post" enctype='multipart/form-data'>
                     @csrf
                     <div class="container">
                         <div class="row">
@@ -39,14 +39,14 @@
                                 Tanggal Mulai*
                             </div>
                             <div class="col-sm-auto">
-                                <input id="date" type="date" name="date" class="form-control form-control-sm"
+                                <input id="date" type="date" name="date_start" class="form-control form-control-sm"
                                     value="{{old('date')}} " required>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu Mulai*
                             </div>
                             <div class="col-sm-auto">
-                                <input id="time" type="time" name="time" class="form-control form-control-sm"
+                                <input id="time" type="time" name="time_start" class="form-control form-control-sm"
                                     value="{{old('time')}}" required>
                             </div>
                             WIB
@@ -98,10 +98,10 @@
 
                         <div class="row">
                             <div class="col-sm-2">
-                                Link Daring*
+                                Link Daring
                             </div>
                             <div class="col-sm-5">
-                                <input id="link" type="text" name="link" placeholder="Link Meeting Online" required
+                                <input id="link" type="text" name="link" placeholder="Link Meeting Online"
                                     class="form-control form-control-sm" value="{{old('link')}}">
                             </div>
                         </div>
@@ -133,8 +133,8 @@
                         <div class="row">
                             <div class="col-sm-2"> Lampiran
                             </div>
-                            <div class="col-sm-5">
-                                <input id="attachment" type="file" name="attachment"
+                            <div class="form-group col-sm-5 ">
+                                <input id="attachment" type="file" name="attachment" 
                                     class="form-control form-control-sm" placeholder="Lampiran"
                                     value="{{old('attachment')}}">
                             </div>

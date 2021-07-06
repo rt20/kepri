@@ -23,11 +23,11 @@ class ScheduleController extends Controller
                 //Jika tanggal awal(from_date) hingga tanggal akhir(to_date) adalah sama maka
                 if($request->from_date === $request->to_date){
                     //kita filter tanggalnya sesuai dengan request from_date
-                    $schedule = Schedule::whereDate('date','=', $request->from_date)->get();
+                    $schedule = Schedule::whereDate('date_start','=', $request->from_date)->get();
                 }
                 else{
                     //kita filter dari tanggal awal ke akhir
-                    $schedule = Schedule::whereBetween('date', array($request->from_date, $request->to_date))->get();
+                    $schedule = Schedule::whereBetween('date_start', array($request->from_date, $request->to_date))->get();
                 }                
             }
             //load data default
@@ -52,7 +52,7 @@ class ScheduleController extends Controller
 
     public function ubah()
     {
-        $schedule = Schedule::orderBy('date', 'desc')->get();
+        $schedule = Schedule::orderBy('date_start', 'desc')->get();
     
         return view ('schedules.ubah',[
             'schedule' => $schedule
@@ -83,8 +83,20 @@ class ScheduleController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // dd($data);
-        Schedule::create($data);
+        if(!empty($request->attachment))
+        {
+            $data['attachment'] = $request->file('attachment')->store(
+                'assets/attachment','public'
+            );
+            Schedule::create($data);
+        }else{
+            Schedule::create($data);
+        }
+        
+        // $data['attachment'] = $request->file('attachment')->getClientOriginalName('assets/attachment','public');
+     
+        
+
 
         # Tampilin flash message
         flash('Selamat data telah berhasil ditambahkan')->success();

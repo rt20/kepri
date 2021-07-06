@@ -89,18 +89,18 @@
                     processing: true,
                     serverSide: true, //aktifkan server-side 
                     ajax: {
-                        // url: "{{ route('schedules.index') }}",
-                        url: "https://jadwal.balok.id/schedules", 
+                        url: "{{ route('schedules.index') }}",
+                        // url: "https://jadwal.balok.id/schedules", 
                         type: 'GET',
                         data:{from_date:from_date, to_date:to_date} //jangan lupa kirim parameter tanggal 
                     },
                     columns: [{
-                            data: 'date',
-                            name: 'date'
+                            data: 'date_start',
+                            name: 'date_start'
                         },
                         {
-                            data: 'time',
-                            name: 'time'
+                            data: 'time_start',
+                            name: 'time_start'
                         },
                         {
                             data: 'date_end',
@@ -126,7 +126,16 @@
                             data: 'link',
                             name: 'link',
                             render: function ( data, type, row, meta ) {
-                                return '<a href="'+data+'" target="_blank">'+data+'</a>';
+
+                                if (data == null) {
+                                        return '';
+                                        }
+                                    else {
+                                        return '<a href='+ data +'><i class="fa fa-link"></i></a>';
+                                        }
+
+
+                                // return '<a href="'+data+'" target="_blank">'+data+'</a>';
                             }
                         },
                         {
@@ -135,7 +144,18 @@
                         },
                         {
                             data: 'attachment',
-                            name: 'attachment'
+                            name: 'attachment',
+                            render: function ( data, type, row, meta ) {
+                                if (data == null) {
+                                        return '';
+                                        }
+                                    else {
+                                        return '<a href='+ data +'><i class="fa fa-download"></i></a>';
+                                        }
+
+
+                                // return '<a href="'+data+'" target="_blank">'+data+'</a>';
+                            }
                         },
                         {
                             data: 'note',

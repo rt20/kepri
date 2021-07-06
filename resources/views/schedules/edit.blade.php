@@ -41,14 +41,14 @@
                                 Tanggal Kegiatan*
                             </div>
                             <div class="col-sm-auto">
-                                <input type="date" name="date" class="form-control form-control-sm"
+                                <input type="date" name="date_start" class="form-control form-control-sm"
                                     value="{{old('date') ?? $schedule->date}}" required>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu*
                             </div>
                             <div class="col-sm-auto">
-                                <input type="time" name="time" class="form-control form-control-sm"
+                                <input type="time" name="time_start" class="form-control form-control-sm"
                                     value="{{old('time') ?? $schedule->time}}" required>
                             </div>
                             WIB
@@ -89,10 +89,10 @@
                         </br>
                         <div class="row">
                             <div class="col-sm-2">
-                                Link Daring*
+                                Link Daring
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="link" placeholder="Link Meeting Online" required
+                                <input type="text" name="link" placeholder="Link Meeting Online"
                                     class="form-control form-control-sm" value="{{old('link')?? $schedule->link}}">
                             </div>
                         </div>
