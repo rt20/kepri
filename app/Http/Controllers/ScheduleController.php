@@ -91,13 +91,8 @@ class ScheduleController extends Controller
             Schedule::create($data);
         }else{
             Schedule::create($data);
-        }
-        
-        // $data['attachment'] = $request->file('attachment')->getClientOriginalName('assets/attachment','public');
+        }    
      
-        
-
-
         # Tampilin flash message
         flash('Selamat data telah berhasil ditambahkan')->success();
         
@@ -142,8 +137,70 @@ class ScheduleController extends Controller
     public function update(Request $request, Schedule $schedule)
     {
         $data = $request->all();
+        // if(!empty($request->attachment))
+        // {
+        //     $data['attachment'] = $request->file('attachment')->store(
+        //         'assets/attachment','public'
+        //     );
+        //     Schedule::create($data);
+        // }else{
+        //     Schedule::create($data);
+        // }    
+
+        if($request->file('attachment'))
+        {
+            $data['attachment'] = $request->file('attachment')->store('assets/attachment', 'public');
+            $schedule->update($data);
+        }
 
         $schedule->update($data);
+
+        // if($request->hasfile('attachment'))
+
+        // {   
+    
+        // $data['attachment'] = $request->file('attachment')->store(
+        //             'assets/attachment','public'
+        //         );
+        //         $schedule->update($data);
+        // }
+    
+        // dd($data['attachment']);
+    
+      
+        // $schedule->update($data);
+
+        // if(!empty($request->attachment))
+        // {
+        //     $data['attachment'] = $request->file('attachment')->update(
+        //         'assets/attachment','public'
+        //     );
+           
+        //     $schedule->update($data);
+        // }else{
+        //     $schedule->update($data);
+        // }
+
+
+        // if($request->attachment === ""){
+        //     $schedule->update($data);
+        // }
+        // else{
+        //     $data['attachment'] = $request->file('attachment')->store(
+        //         'assets/attachment','public'
+        //     );
+        //     dd($data);
+        //     $schedule->update($data);
+        // }           
+        
+        // if ($request->hasFile('file')) {
+        //     $data['attachment'] = $request->file('attachment')->store(
+        //         'assets/attachment','public'
+        //     );
+        //     $schedule->update($data);
+        // }
+        // $schedule->update($data);
+
         flash('Selamat data telah berhasil diupdate')->success();
 
         return redirect()->route('schedules.ubah');

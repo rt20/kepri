@@ -38,18 +38,18 @@
                         <div class="row">
 
                             <div class="col-sm-2">
-                                Tanggal Kegiatan*
+                                Tanggal Mulai*
                             </div>
                             <div class="col-sm-auto">
                                 <input type="date" name="date_start" class="form-control form-control-sm"
-                                    value="{{old('date') ?? $schedule->date}}" required>
+                                    value="{{old('date_start') ?? $schedule->date_start}}" required>
                             </div>
                             <div class="col-sm-auto">
-                                Waktu*
+                                Waktu Mulai*
                             </div>
                             <div class="col-sm-auto">
                                 <input type="time" name="time_start" class="form-control form-control-sm"
-                                    value="{{old('time') ?? $schedule->time}}" required>
+                                    value="{{old('time_start') ?? $schedule->time_start}}" required>
                             </div>
                             WIB
                         </div>

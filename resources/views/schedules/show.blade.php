@@ -40,15 +40,15 @@
                                 Tanggal Kegiatan*
                             </div>
                             <div class="col-sm-auto">
-                                <input type="date" name="date" class="form-control form-control-sm"
-                                    value="{{old('date') ?? $schedule->date}}" disabled>
+                                <input type="date" name="date_start" class="form-control form-control-sm"
+                                    value="{{old('date_start') ?? $schedule->date}}" disabled>
                             </div>
                             <div class="col-sm-auto">
                                 Waktu*
                             </div>
                             <div class="col-sm-auto">
                                 <input type="time" name="time" class="form-control form-control-sm"
-                                    value="{{old('time') ?? $schedule->time}}" disabled required>
+                                    value="{{old('time_start') ?? $schedule->time}}" disabled required>
                             </div>
                             WIB
                         </div>
