@@ -55,18 +55,18 @@
                         <div class="row">
 
                             <div class="col-sm-2">
-                                Tanggal Selesai*
+                                Tanggal Selesai
                             </div>
                             <div class="col-sm-auto">
                                 <input id="date_end" type="date" name="date_end" class="form-control form-control-sm"
-                                    value="{{old('date_end')}} " required>
+                                    value="{{old('date_end')}} ">
                             </div>
                             <div class="col-sm-auto">
-                                Waktu Selesai*
+                                Waktu Selesai
                             </div>
                             <div class="col-sm-auto">
                                 <input id="time_end" type="time" name="time_end" class="form-control form-control-sm"
-                                    value="{{old('time_end')}}" required>
+                                    value="{{old('time_end')}}">
                             </div>
                             WIB
                         </div>

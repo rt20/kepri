@@ -49,11 +49,11 @@
                         <th>Action</th>
                     </tr> 
                     </thead>
-                    <tbody>
+                    <tbody> 
                         @forelse($schedule as $data)
                             <tr>
-                                <td>{{ date('D, d F y', strtotime($data->date_start)) }}</td>
-                                <td>{{ date('H:i', strtotime($data->time_start)) }}</td>
+                                <td>{{ $data->date_start }}</td>
+                                <td>{{ $data->time_start }}</td>
                                 <td>{{ $data->agenda }}</td>
                                 <td>{{ $data->location }}</td>
                                 <td>{{ $data->organizer }}</td>

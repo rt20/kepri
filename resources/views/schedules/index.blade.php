@@ -58,9 +58,9 @@
                     <thead>
                         <tr>
 
-                            <th>Hari, Tanggal Mulai</th>
+                            <th>Tanggal Mulai</th>
                             <th>Waktu Mulai</th>
-                            <th>Hari, Tanggal Selesai</th>
+                            <th>Tanggal Selesai</th>
                             <th>Waktu Selesai</th>
                             <th>Agenda</th>
                             <th>Penyelenggara</th>
