@@ -35,12 +35,12 @@
             </div> -->
           
             <!-- <div class="bg-white"> -->
-            <div class="card-body table-responsive p-0" style="overflow-x:auto;">
-                <table id="example" class="table table-striped table-bordered table-sm" >
+            <div class="card-body p-0" style="overflow-x:auto;">
+                <table class="table table-responsive table-striped table-bordered table-sm" >
                 <!-- <table id="schedule" class="table table-striped table-bordered table-sm" style="width:100%"> -->
                     <thead>
                     <tr>
-                        <th>Hari, Tanggal</th>
+                        <th>Tanggal</th>
                         <th>Waktu</th>
                         <th>Agenda</th>
                         <th>Lokasi</th>
@@ -59,7 +59,6 @@
                                 <td>{{ $data->organizer }}</td>
                                 <td>{{ $data->participant }}</td>
                                 <td>
-                               
                                     <a href="{{ route('schedules.edit', $data->id) }}" class="btn btn-success btn-sm" title="Ubah">
                                     <i class="fa fa-edit"></i>
                                     </a>
@@ -88,9 +87,10 @@
         </div>
     
 
-
+       
 
       </div><!--/. container-fluid -->
+      {!! $schedule->render() !!}
     </section>
     <!-- /.content -->
   </div>

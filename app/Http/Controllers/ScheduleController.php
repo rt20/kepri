@@ -13,46 +13,52 @@ class ScheduleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
-        if($request->ajax()){           
+        // if($request->ajax()){           
             //Jika request from_date ada value(datanya) maka
-            if(!empty($request->from_date))
-            {
+            // if(!empty($request->from_date))
+            // {
                 //Jika tanggal awal(from_date) hingga tanggal akhir(to_date) adalah sama maka
-                if($request->from_date === $request->to_date){
+                // if($request->from_date === $request->to_date){
                     //kita filter tanggalnya sesuai dengan request from_date
-                    $schedule = Schedule::whereDate('date_start','=', $request->from_date)->get();
-                }
-                else{
+                    // $schedule = Schedule::whereDate('date_start','=', $request->from_date)->get();
+                // }
+                // else{
                     //kita filter dari tanggal awal ke akhir
-                    $schedule = Schedule::whereBetween('date_start', array($request->from_date, $request->to_date))->get();
-                }                
-            }
+                    // $schedule = Schedule::whereBetween('date_start', array($request->from_date, $request->to_date))->get();
+                // }                
+            // }
             //load data default
-            else
-            {
-                $schedule = Schedule::all();
-            }
-            return datatables()->of($schedule)
-                        ->addColumn('action', function($data){
-                            $button = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit-post"><i class="far fa-edit"></i> Edit</a>';
-                            $button .= '&nbsp;&nbsp;';
-                            $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Delete</button>';     
-                            return $button;
-                        })
-                        ->rawColumns(['action'])
-                        ->addIndexColumn()
-                        ->make(true);            
+            // else
+            // {
+                // $schedule = Schedule::all();
+        //     }
+        //     return datatables()->of($schedule)
+        //                 ->addColumn('action', function($data){
+        //                     $button = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit-post"><i class="far fa-edit"></i> Edit</a>';
+        //                     $button .= '&nbsp;&nbsp;';
+        //                     $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Delete</button>';     
+        //                     return $button;
+        //                 })
+        //                 ->rawColumns(['action'])
+        //                 ->addIndexColumn()
+        //                 ->make(true);            
+        // }
+        
+        if (request()->search) {
+            $data = Schedule::where('agenda', 'like', '%' . request()->search . '%')->paginate(10);
+        } else {
+        $data = Schedule::orderBy('date_start', 'desc')->paginate(10);
         }
-        return view('schedules.index');
+        return view('schedules.index', compact('data'));
        
     }
 
     public function ubah()
     {
-        $schedule = Schedule::orderBy('date_start', 'desc')->get();
+        $schedule = Schedule::orderBy('date_start', 'desc')->paginate(10);
     
         return view ('schedules.ubah',[
             'schedule' => $schedule
