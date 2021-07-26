@@ -22,9 +22,7 @@
 <script type="text/javascript" language="javascript" src="{{ asset('js/jquery/jquery-3.5.1.js')}}"></script>
 <script type="text/javascript" language="javascript"
     src="{{ asset('dist/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script type="text/javascript" language="javascript"
-    src="{{ asset('dist/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-
+<script type="text/javascript" language="javascript" src="{{ asset('dist/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
   	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
@@ -109,13 +107,23 @@
                     } //jangan lupa kirim parameter tanggal
                 },
                 columns: [{
+                        "data": "id",
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    {
                         data: 'date_start',
                         name: 'date_start'
                     },
 
                     {
-                        data: 'date_end',
-                        name: 'date_end'
+                        data: 'time_start',
+                        name: 'time_start'
+                    },
+                    {
+                        data: 'location',
+                        name: 'location'
                     },
                     {
                         data: 'agenda',
@@ -125,58 +133,55 @@
                         data: 'organizer',
                         name: 'organizer'
                     },
-                    {
-                        data: 'location',
-                        name: 'location'
-                    },
+                    
                     {
                         data: 'participant',
                         name: 'participant'
                     },
-                    {
-                        data: 'attachment',
-                        name: 'attachment',
-                        render: function (data, type, row, meta) {
-                            if (data == null) {
-                                return '';
-                            } else {
-                                return '<a href=' + data +
-                                '><i class="fa fa-download"></i></a>';
-                            }
+                    // {
+                    //     data: 'attachment',
+                    //     name: 'attachment',
+                    //     render: function (data, type, row, meta) {
+                    //         if (data == null) {
+                    //             return '';
+                    //         } else {
+                    //             return '<a href=' + data +
+                    //             '><i class="fa fa-download"></i></a>';
+                    //         }
 
 
-                            // return '<a href="'+data+'" target="_blank">'+data+'</a>';
-                        }
-                    },
+                    //         // return '<a href="'+data+'" target="_blank">'+data+'</a>';
+                    //     }
+                    // },
                     {
                         data: 'note',
                         name: 'note'
                     },
 
                 ],
-                columnDefs: [{
-                        render: function (data, type, row) {
-                            return data + ' - ' + row['time_start'] + '';
-                        },
-                        "targets": 0
-                    },
-                    {
-                        render: function (data, type, row) {
-                            return data + ' - ' + row['time_end'] + '';
-                        },
-                        "targets": 1
-                    },
+                // columnDefs: [{
+                //         render: function (data, type, row) {
+                //             return data + ' - ' + row['time_start'] + '';
+                //         },
+                //         "targets": 0
+                //     },
+                //     {
+                //         render: function (data, type, row) {
+                //             return data + ' - ' + row['time_end'] + '';
+                //         },
+                //         "targets": 1
+                //     },
 
-                ],
+                // ],
                 // order: [
                 //     [0, 'asc']
-                // ]
+                // ],
                 dom: 'Bfrtip',
-                lengthMenu: [ [ 10, 25, 50, -1 ], [ '10', '25', '50', 'Semua' ] ],
-                buttons: [     
-                    'pageLength',              
-                    { extend: 'csv', text: '<i class="fas fa-file-csv fa-1x"></i>'},
-                    { extend: 'excel', text: '<i class="fas fa-file-excel" aria-hidden="true"></i>' },
+                lengthMenu: [ [ 10, 25, 50, 100, -1 ], [ '10', '25', '50', '100','Semua' ] ],
+                buttons: [
+                    'pageLength',
+                    // { extend: 'csv', text: '<i class="fas fa-file-csv fa-1x"></i>'},
+                    // { extend: 'excel', text: '<i class="fas fa-file-excel" aria-hidden="true"></i>' },
                     { extend: 'pdf', text: '<i class="fas fa-file-pdf fa-1x" aria-hidden="true"></i>' },
                     { extend: 'print', text: '<i class="fas fa-print" aria-hidden="true"></i>' },
                 ],

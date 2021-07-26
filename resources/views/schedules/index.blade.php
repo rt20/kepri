@@ -61,22 +61,22 @@
                     <table id="schedule" class="table table-responsive table-striped table-bordered table-sm" style="width:100%">
                     <thead>
                         <tr>
-                       
-                            <th>Mulai</th>
 
-                            <th>Selesai</th>
-                           
+                            <th>No</th>
+                            <th>Tanggal</th>
+                            <th>Jam</th>
+                            <th>Tempat</th>
                             <th>Agenda</th>
                             <th>Penyelenggara</th>
-                            <th>Lokasi</th>
+                            
 
-                            <th>Peserta</th>
-                            <th>Lampiran</th>
+                            <th>Disposisi</th>
+                           
                             <th>Keterangan</th>
 
                         </tr>
                     </thead>
-                   
+
                 </table>
 
             </div>
@@ -85,7 +85,6 @@
 
 
 
-          
         </div>
 
         <!--/. container-fluid -->

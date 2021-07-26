@@ -13,7 +13,7 @@ class Schedule extends Model
 
     public function getDateStartAttribute(){
         return Carbon::parse($this->attributes['date_start'])
-            ->translatedFormat('l, d F Y');
+            ->translatedFormat('d F Y');
     }
     public function getDateEndAttribute(){
         return Carbon::parse($this->attributes['date_end'])

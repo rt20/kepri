@@ -96,17 +96,7 @@
                         </div>
                         <br>
 
-                        <div class="row">
-                            <div class="col-sm-2">
-                                Link Daring
-                            </div>
-                            <div class="col-sm-5">
-                                <input id="link" type="text" name="link" placeholder="Link Meeting Online"
-                                    class="form-control form-control-sm" value="{{old('link')}}">
-                            </div>
-                        </div>
-                        <br>
-
+                      
 
                         <div class="row">
                             <div class="col-sm-2">
@@ -142,7 +132,7 @@
                         <br>
                         <div class="row">
                             <div class="col-sm-2">
-                                Lokasi
+                                Tampat
                             </div>
                             <div class="col-sm-5">
                                 <input id="location" type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"

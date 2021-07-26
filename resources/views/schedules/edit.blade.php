@@ -87,16 +87,7 @@
                             </div>
                         </div>
                         </br>
-                        <div class="row">
-                            <div class="col-sm-2">
-                                Link Daring
-                            </div>
-                            <div class="col-sm-5">
-                                <input type="text" name="link" placeholder="Link Meeting Online"
-                                    class="form-control form-control-sm" value="{{old('link')?? $schedule->link}}">
-                            </div>
-                        </div>
-                        <br>
+                       
                         <div class="row">
                             <div class="col-sm-2">
                                 Penyelenggara
@@ -143,7 +134,7 @@
                         <br>
                         <div class="row">
                             <div class="col-sm-2">
-                                Lokasi
+                                Tempat
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"
