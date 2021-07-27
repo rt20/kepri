@@ -23,23 +23,10 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
         <div class="card">
             <div class="card-body">
-                <!-- SEARCH FORM -->
-                <!-- <form class="form-inline ml-3">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="text" name="search"
-                            placeholder="Cari Agenda" aria-label="Search" value="{{old('search')}}">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form> -->
                  <div class="row input-daterange">
                     <div class="col-sm-2">
                         <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date"
@@ -68,10 +55,7 @@
                             <th>Tempat</th>
                             <th>Agenda</th>
                             <th>Penyelenggara</th>
-                            
-
                             <th>Disposisi</th>
-                           
                             <th>Keterangan</th>
 
                         </tr>

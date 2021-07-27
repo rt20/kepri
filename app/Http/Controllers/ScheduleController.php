@@ -48,11 +48,6 @@ class ScheduleController extends Controller
                         ->make(true);            
         }
         
-        // if (request()->search) {
-        //     $data = Schedule::where('agenda', 'like', '%' . request()->search . '%')->paginate(10);
-        // } else {
-        // $data = Schedule::orderBy('date_start', 'desc')->paginate(10);
-        // }
         return view('schedules.index');
        
     }

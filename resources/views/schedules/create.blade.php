@@ -132,7 +132,7 @@
                         <br>
                         <div class="row">
                             <div class="col-sm-2">
-                                Tampat
+                                Tempat
                             </div>
                             <div class="col-sm-5">
                                 <input id="location" type="text" name="location" placeholder="Lokasi Kegiatan/ Acara"

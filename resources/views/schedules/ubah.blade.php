@@ -28,36 +28,35 @@
     <section class="content">
       <div class="py-1">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- <div class="mb-10">
-                <a href="{{ route('schedules.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                    + Tambah Jadwal
-                </a>
-            </div> -->
-          
-            <!-- <div class="bg-white"> -->
             <div class="card-body p-0" style="overflow-x:auto;">
-                <table class="table table-responsive table-striped table-bordered table-sm" >
-                <!-- <table id="schedule" class="table table-striped table-bordered table-sm" style="width:100%"> -->
+                <!-- <table class="table table-responsive table-striped table-bordered table-sm" > -->
+                <table id="example" class="table table-responsive table-striped table-bordered table-sm" style="width:100%">
                     <thead>
                     <tr>
+                    <th>No</th>
                         <th>Tanggal</th>
-                        <th>Waktu</th>
+                        <th>Jam</th>
+                        <th>Tempat</th>
                         <th>Agenda</th>
-                        <th>Lokasi</th>
+                        
                         <th>Penyelenggara</th>
-                        <th>Peserta</th>
+                        <th>Disposisi</th>
+                        <th>Keterangan</th>
                         <th>Action</th>
                     </tr> 
                     </thead>
                     <tbody> 
                         @forelse($schedule as $data)
                             <tr>
+                            <th>{{ ($schedule->currentPage()-1) * $schedule->perPage()+$loop->index+1 }}</th>
                                 <td>{{ $data->date_start }}</td>
                                 <td>{{ $data->time_start }}</td>
-                                <td>{{ $data->agenda }}</td>
                                 <td>{{ $data->location }}</td>
+                                <td>{{ $data->agenda }}</td>
+                                
                                 <td>{{ $data->organizer }}</td>
                                 <td>{{ $data->participant }}</td>
+                                <td>{{ $data->note }}</td>
                                 <td>
                                     <a href="{{ route('schedules.edit', $data->id) }}" class="btn btn-success btn-sm" title="Ubah">
                                     <i class="fa fa-edit"></i>
@@ -90,7 +89,6 @@
        
 
       </div><!--/. container-fluid -->
-      {!! $schedule->render() !!}
     </section>
     <!-- /.content -->
   </div>
