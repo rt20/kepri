@@ -56,7 +56,7 @@
 
 
                         <br>
-                        <div class="row">
+                        <!-- <div class="row">
 
                             <div class="col-sm-2">
                                 Tanggal Selesai
@@ -75,7 +75,7 @@
                             WIB
                         </div>
 
-                        <br>
+                        <br> -->
                         <div class="row">
                             <div class="col-sm-2">
                                 Agenda*
@@ -102,10 +102,10 @@
 
                         <div class="row">
                             <div class="col-sm-2">
-                                Peserta
+                                Disposisi
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" name="participant" placeholder="Peserta Kegiatan/ Acara"
+                                <input type="text" name="participant" placeholder="Disposisi"
                                     class="form-control form-control-sm"
                                     value="{{old('participant') ?? $schedule->participant }}">
                             </div>
@@ -122,7 +122,7 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-sm-2"> Lampiran
                             </div>
                             <div class="col-sm-5">
@@ -131,7 +131,7 @@
                                     placeholder="Lampiran" value="{{old('attachment') ?? $schedule->attachment }}">
                             </div>
                         </div>
-                        <br>
+                        <br> -->
                         <div class="row">
                             <div class="col-sm-2">
                                 Tempat
@@ -148,7 +148,7 @@
                         <div class="row">
                             <!-- <div id="googleMap" style="width:100%;height:380px;"></div> -->
                         </div>
-                        <br>
+                        
                         <div class="row">
                             <div class="col-sm-2">
                             </div>

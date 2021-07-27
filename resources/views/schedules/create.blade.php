@@ -52,7 +52,7 @@
                             WIB
                         </div>
                         <br>
-                        <div class="row">
+                        <!-- <div class="row">
 
                             <div class="col-sm-2">
                                 Tanggal Selesai
@@ -71,7 +71,7 @@
                             WIB
                         </div>
 
-                        <br>
+                        <br> -->
 
 
                         <div class="row">
@@ -100,11 +100,11 @@
 
                         <div class="row">
                             <div class="col-sm-2">
-                                Peserta
+                               Disposisi
                             </div>
                             <div class="col-sm-5">
                                 <input id="participant" type="text" name="participant"
-                                    placeholder="Peserta Kegiatan/ Acara" class="form-control form-control-sm"
+                                    placeholder="Disposisi" class="form-control form-control-sm"
                                     value="{{old('participant')}}">
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-sm-2"> Lampiran
                             </div>
                             <div class="form-group col-sm-5 ">
@@ -129,7 +129,7 @@
                                     value="{{old('attachment')}}">
                             </div>
                         </div>
-                        <br>
+                        <br> -->
                         <div class="row">
                             <div class="col-sm-2">
                                 Tempat
