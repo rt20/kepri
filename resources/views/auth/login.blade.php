@@ -4,7 +4,7 @@
 <head>
     @include('includes.meta')
 
-    <title>@yield('title') | Dinas Kesehatan Kabupaten Bantul</title>
+    <title>@yield('title')Tenaga Ahli Profesional Kepulauan Riau</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" href="">
@@ -70,8 +70,8 @@
                         <!-- <form method="POST" action="{{ route('login') }}"> -->
                         @csrf
                         <span class="login100-form-title">
-                            Agenda Kegiatan<br>
-                            Dinas Kesehatan <br> Kabupaten Bantul
+                            APBDesa<br>
+                            Provinsi<br> Kepulauan Riau 
                         </span>
 
                         <div class="wrap-input100 validate-input m-b-16" data-validate="Silakan isi alamat email">

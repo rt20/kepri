@@ -4,7 +4,7 @@
 <head>
     @include('includes.meta')
 
-    <title>Home | Jadwal Kegiatan</title>
+    <title>Home | APBDes Kepulauan Riau</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" href="">

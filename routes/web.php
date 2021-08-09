@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\DesaController;
 use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
@@ -17,16 +17,14 @@ Route::get('/', function () {
     // Route::get('/home', \App\Http\Controllers\HomeController::class)->name('home');
 });
 
-// Route::get('/',[HomeController::class, 'index'])->name('home');
 
-//Dashboard
 Route::prefix('/')
     // ->middleware(['auth:sanctum','admin'])
     ->middleware(['auth:sanctum'])
     ->group(function(){
         Route::get('/',[DashboardController::class,'index'])->name('dashboard');
         Route::resource('users', UserController::class);
-        Route::resource('books', BookController::class);
+        Route::resource('desa', DesaController::class);
         Route::resource('borrows', BorrowController::class);
         Route::resource('items', ItemController::class);
 

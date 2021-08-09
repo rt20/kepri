@@ -4,7 +4,7 @@
 <head>
     @include('includes.meta')
 
-    <title>@yield('title') | Agenda</title>
+    <title>@yield('title') | APBDes Provinsi Kepulauan Riau</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" href="">

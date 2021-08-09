@@ -3,7 +3,7 @@
     <head>
         @include('includes.meta')
 
-        <title>@yield('title') | e-Office</title>
+        <title>@yield('title') Tenaga Ahli Profesional Kepulauan Riau </title>
  
         <!-- Favicon -->
         <link rel="apple-touch-icon" href="">
