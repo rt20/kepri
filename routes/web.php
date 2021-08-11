@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ItemController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +26,7 @@ Route::prefix('/')
         Route::resource('users', UserController::class);
         Route::resource('desa', DesaController::class);
         Route::resource('borrows', BorrowController::class);
-        Route::resource('items', ItemController::class);
+        Route::resource('plan', PlanController::class);
 
         Route::get('schedules/ubah', 'App\Http\Controllers\ScheduleController@ubah')->name('schedules.ubah');
         Route::resource('schedules', ScheduleController::class);

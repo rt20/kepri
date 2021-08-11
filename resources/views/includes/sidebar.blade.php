@@ -54,7 +54,7 @@
           </li>
           @endif
           <li class="nav-item has-treeview">
-            <a href="{{ route('schedules.index') }}" class="nav-link">
+            <a href="{{ route('plan.index') }}" class="nav-link">
               <i class="nav-icon fas fa-calendar"></i>
               <p>
                 Perencanaan

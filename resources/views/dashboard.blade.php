@@ -36,7 +36,7 @@
               <div class="inner">
                 <h3>#</h3>
 
-                <p>Jadwal Kegiatan</p>
+                <p>Penyaluran Dana Desa</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>

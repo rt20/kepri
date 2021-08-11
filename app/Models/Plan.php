@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Desa extends Model
+class Plan extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
-    public function plan()
+    public function desa()
 	{
-		return $this->hasMany(Plan::class, 'desa_id');
+		return $this->belongsTo(Desa::class, 'desa_id');
 	}
 }
